@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+
+	"name": "fanli reminder",
+	"version": "1.0.0",
+	"description": "提醒使用返利网",
+
+	"browser_action": {
+		"default_title": "fanli reminder"
+	},
+	"permissions": [
+		"http://*/*",
+		"https://*/*",
+		"activeTab"
+	],
+	"background": {
+		"scripts": ["background.js"]
+	}
+}
