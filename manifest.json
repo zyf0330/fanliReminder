@@ -1,12 +1,12 @@
 {
 	"manifest_version": 2,
 
-	"name": "fanli reminder",
-	"version": "1.0.0",
-	"description": "提醒使用返利网",
+	"name": "shopping remind",
+	"version": "1.1.0",
+	"description": "购物返利和优惠提醒",
 
 	"browser_action": {
-		"default_title": "fanli reminder"
+		"default_title": "shopping remind"
 	},
 	"permissions": [
 		"http://*/*",

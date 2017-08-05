@@ -4,15 +4,25 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 			code: String.raw
 				`
 					var href = "${changeInfo.url}";
-					var tarUrls = [
+					var taobao = [
 						'buy.tmall.com/order/confirm_order.htm',
-						'buy.taobao.com/auction',
+						'buy.taobao.com/auction'
+					]
+					var other = [
 						'www.amazon.cn/gp/buy/(addressselect|payselect|spc)/handlers/display',
 						'trade.jd.\\w+/shopping/order/get(Easy)?OrderInfo'
 					]
-					var isTar = tarUrls.find(url => href.match(new RegExp(url))) != null;
-					if(isTar){
-						alert('别忘了使用返利网')
+					var isTaobao = taobao.find(url => href.match(new RegExp(url))) != null;
+					var isOther = other.find(url => href.match(new RegExp(url))) != null;
+					var msg = null
+					if(isTaobao || isOther){
+						msg = '别忘了使用返利网'
+					}
+					if(isTaobao){
+						msg += '\n使用手淘下单'
+					}
+					if(msg != null){
+						alert(msg)
 					}
 				`
 		});
